@@ -59,7 +59,6 @@ Vagrant.configure("2") do |config|
   end
 
   # Execute Provision
-  config.vm.provision "file", source: "scripts/helpers", destination: "desktop\\helpers" 
   config.vm.provision "shell" do |s|
     s.path = "scripts/install-iis.ps1"
   end
