@@ -1,8 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+Vagrant.require_version ">= 1.8.5"
+
 Vagrant.configure("2") do |config|
-  config.vm.define "Pioneer Windows 10"
+  config.vm.define "Pioneer Dev"
 
   # Name of box to install with
   # config.vm.box = "windows_10_virtualbox"
@@ -27,7 +29,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider :virtualbox do |vb, override|
     vb.gui = true
     vb.cpus = 2
-    vb.memory = 8192
+    vb.memory = 10240
     vb.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]
     vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
     vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
@@ -38,18 +40,30 @@ Vagrant.configure("2") do |config|
     v.gui = true
     v.vmx["memsize"] = 10240
     v.vmx["numvcpus"] = 2
-    v.vmx['displayname'] = "SDE Development Enviroment"
+    v.vmx['displayname'] = "Pioneer Dev"
     v.vmx["ethernet0.virtualDev"] = "vmxnet3"
     v.vmx["RemoteDisplay.vnc.enabled"] = "false"
     v.vmx["RemoteDisplay.vnc.port"] = "5900"
     v.vmx["scsi0.virtualDev"] = "lsisas1068"
   end
 
-  # Execute initial provision
+  # VMWare Fusion configuration
+  config.vm.provider :vmware_fusion do |v, override|
+    #v.gui = true
+    v.vmx["memsize"] = "10240"
+    v.vmx["numvcpus"] = "2"
+    v.vmx["ethernet0.virtualDev"] = "vmxnet3"
+    v.vmx["RemoteDisplay.vnc.enabled"] = "false"
+    v.vmx["RemoteDisplay.vnc.port"] = "5900"
+    v.vmx["scsi0.virtualDev"] = "lsisas1068"
+  end
+
+  # Execute Provision
+  config.vm.provision "file", source: "scripts/helpers", destination: "desktop\\helpers" 
   config.vm.provision "shell" do |s|
     s.path = "scripts/install-iis.ps1"
   end
   config.vm.provision "shell" do |s|
-    s.path = "scripts/install-chocolatey.ps1"
+    s.path = "scripts/install-programs.ps1"
   end
 end 

@@ -2,85 +2,100 @@
 # Choco Install
 #   Additonal packages can be found at https://chocolatey.org/packages
 #   1) Remove/Add packages
-#   2) Run Script
 #################################################################################################
+Write-host "Program Installed Started At: $((Get-Date).ToString())"
+write-host "Installing Programs"
 
-write-host "Installing Chocolatey . . ."
 $ChocoInstallPath = "$($env:SystemDrive)\ProgramData\Chocolatey\bin"
 if (!(Test-Path $ChocoInstallPath)) {
-    iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+    write-host "Install Chocolatey . . . "
+    iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')) | out-null
+    write-host "END Installing Chocolatey!" 
+} else {
+    write-host "Upgrade Chocolatey . . . "
+    choco upgrade chocolatey
+    write-host "END Upgrade Chocolatey!"
 }
-write-host "END Installing Chocolatey!"
 
 chocolatey feature enable -n=allowGlobalConfirmation
 
 write-host "Install ConEnmu . . . "
-cinst -y  conemu 
+cinst -y  conemu | Out-Null
 write-host "END Install ConEnmu!"
 
 write-host "Install WinRAR . . . "
-cinst -y  winrar 
+cinst -y  winrar | Out-Null
 write-host "END Install WinRAR!"
 
 write-host "Install 7zip . . . "
-cinst -y  7zip 
+cinst -y  7zip | Out-Null
 write-host "END Install 7zip!"
 
+write-host "Install Slack . . . "
+cinst -y  slack | Out-Null
+write-host "END Install Slack!"
+
 write-host "Install Chrome . . . "
-cinst -y  GoogleChrome  
+cinst -y  GoogleChrome  | Out-Null
 write-host "END Install Chrome!"
 
 write-host "Install Firefox . . . "
-cinst -y  firefox 
+cinst -y  firefox | Out-Null
 write-host "END Install Firefox!"
 
 write-host "Install GIT . . . "
-cinst -y  git.install 
+cinst -y  git.install | Out-Null
 write-host "END Install GIT!"
 
-write-host "Install posh-git"
-cinst -y poshgit  
-write-host "END posh-git!"
-
 write-host "Install NodeJs . . . "
-cinst -y nodejs.install 
+cinst -y nodejs.install | Out-Null
 write-host "END Install NodeJs!"
 
 write-host "Install Redis . . . "
-cinst -y  redis 
+cinst -y  redis | Out-Null
 write-host "END Install Redis!"
 
 write-host "Install Redis Desktop Manager . . . "
-cinst -y  redis-desktop-manager 
+cinst -y  redis-desktop-manager | Out-Null
 write-host "END Install Redis Desktop Manager!"
 
 write-host "Install Visual Studio Code . . . "
-cinst -y  visualstudiocode 
+cinst -y  visualstudiocode | Out-Null
 write-host "END Install Visual Studio Code!"
 
 write-host "Install Visual Studio 2015 Enterprise . . ."
-cinst -y  visualstudio2015enterprise 
+cinst -y  visualstudio2015enterprise | Out-Null
 write-host "END Install Visual Studio 2015"
 
 # write-host "Install Visual Studio 2015 Professional  . . ."
-# cinst -y  visualstudio2015professional 
+# cinst -y  visualstudio2015professional | Out-Null
 # write-host "END Install Visual Studio 2015 Professional"
 
 # write-host "Install Visual Studio 2015 Community  . . ."
-# cinst -y  visualstudio2015community 
+# cinst -y  visualstudio2015community | Out-Null
 # write-host "END Install Visual Studio 2015 Community"
 
 write-host "Install ReSharper . . . "
-cinst -y  resharper 
+cinst -y  resharper | Out-Null
 write-host "END Install ReSharper!"
 
+write-host "Install SQL Server Management Studio . . . "
+cinst -y  sql-server-management-studio  | Out-Null
+write-host "END Install SQL Server Management Studio!"
+
 # write-host "Install Web Api CMD . . . "
-# choco install webpicommandline
+# choco install webpicommandline| Out-Null
 # write-host "END Install Install Web Api CMD!"
 
 # write-host "Install Url Rewrite and ARR . . ."
-# $webPiProducts = @('UrlRewrite2', 'ARRv3_0') 
-# WebPICMD /Install /Products:"$($webPiProducts -join ',')" /AcceptEULA
+# $iis = Get-Service W3SVC
+# if ($iis) 
+# {
+#     $webPiProducts = @('UrlRewrite2', 'ARRv3_0') 
+#     WebPICMD /Install /Products:"$($webPiProducts -join ',')" /AcceptEULA | out-null
+# }
 # write-host "END Install Url Rewrite and ARR . . ."
 
 chocolatey feature disable -n=allowGlobalConfirmation
+
+Write-host "Program Installed Ended At: $((Get-Date).ToString())"
