@@ -98,4 +98,13 @@ write-host "END Install SQL Server Management Studio!"
 
 chocolatey feature disable -n=allowGlobalConfirmation
 
+write-host "Install Gulp . . ."
+npm rm --global gulp
+npm install --global gulp-cli
+write-host "END Install Gulp!"
+
+write-host "Install Bower . . ."
+npm install --global bower
+write-host "END Install Bower!"
+
 Write-host "Program Installed Ended At: $((Get-Date).ToString())"
