@@ -1,4 +1,4 @@
-# Pioneer Coder Development Environment
+# Pioneer Code Development Environment With Packer, Vagrant and Chocolatey
 
 ## Overview
 
