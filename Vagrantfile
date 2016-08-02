@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider :virtualbox do |vb, override|
     vb.gui = true
     vb.cpus = 2
-    vb.memory = 10240
+    vb.memory = 8192
     vb.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]
     vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
     vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
   # VMWare Workstation configuration
   config.vm.provider :vmware_workstation do |v, override|
     v.gui = true
-    v.vmx["memsize"] = 10240
+    v.vmx["memsize"] = 8192
     v.vmx["numvcpus"] = 2
     v.vmx['displayname'] = "Pioneer Dev"
     v.vmx["ethernet0.virtualDev"] = "vmxnet3"
@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
   # VMWare Fusion configuration
   config.vm.provider :vmware_fusion do |v, override|
     #v.gui = true
-    v.vmx["memsize"] = "10240"
+    v.vmx["memsize"] = "8192"
     v.vmx["numvcpus"] = "2"
     v.vmx["ethernet0.virtualDev"] = "vmxnet3"
     v.vmx["RemoteDisplay.vnc.enabled"] = "false"

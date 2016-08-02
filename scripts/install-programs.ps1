@@ -107,4 +107,8 @@ write-host "Install Bower . . ."
 npm install --global bower
 write-host "END Install Bower!"
 
+write-host "Install DefinitelyTyped . . ."
+npm install tsd -g
+write-host "END Install DefinitelyTyped!
+
 Write-host "Program Installed Ended At: $((Get-Date).ToString())"
