@@ -2,12 +2,12 @@
 
 ## Overview
 
-A general development environment for Windows.  It is also worth noting that [I](https://github.com/chad-ramos) use this on daily bases, including on the job. 
+A general development environment for Windows.  It is also worth noting that [I](https://github.com/chad-ramos) use this on a daily basis, including on the job. 
 
 ### Who is this for?
 
 * Tired of messing up your PC with outdated assets that degrade over time?
-* Tired of the amount of time it takes for you to setup a new dev environment?
+* Tired of the amount of time it takes for you to set up a new dev environment?
 * Prefer some modern-day comforts such as configurable, reproducible and portable environments.
 
 If you answered yes to any of these questions, then this workflow might be for you.
@@ -85,7 +85,7 @@ In the pioneer-windows-development-environment repo, there is a file called [Vag
 config.vm.box = {name-of-box}
 ```
 ## Provision
-Depending on what you want to be installed coming out of the gates, you might want to take a quick look at the following provision scripts.
+Depending on what you want to installed coming out of the gates, you might want to take a quick look at the following provision scripts.
 * install-iis.ps1
 * install-programs.ps1
 
