@@ -84,7 +84,7 @@ cinst -y  sql-server-management-studio  | Out-Null
 write-host "END Install SQL Server Management Studio!"
 
 write-host "Install Stackify Prefix . . ."
-choco install prefix
+cinst -y prefix | Out-Null
 write-host "END Install Stackify Prefix!"
 
 # write-host "Install Web Api CMD . . . "
