@@ -83,6 +83,11 @@ write-host "Install SQL Server Management Studio . . . "
 cinst -y  sql-server-management-studio  | Out-Null
 write-host "END Install SQL Server Management Studio!"
 
+write-host "Install Stackify Prefix . . ."
+choco install prefix
+write-host "END Install Stackify Prefix!"
+
+
 # write-host "Install Web Api CMD . . . "
 # choco install webpicommandline| Out-Null
 # write-host "END Install Install Web Api CMD!"
@@ -109,6 +114,7 @@ write-host "END Install Bower!"
 
 write-host "Install DefinitelyTyped . . ."
 npm install tsd -g
-write-host "END Install DefinitelyTyped!
+write-host "END Install DefinitelyTyped!"
+
 
 Write-host "Program Installed Ended At: $((Get-Date).ToString())"
