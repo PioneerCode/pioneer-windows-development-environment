@@ -87,6 +87,10 @@ write-host "Install Stackify Prefix . . ."
 cinst -y prefix | Out-Null
 write-host "END Install Stackify Prefix!"
 
+write-host "Install FileZilla . . ."
+cinst -y filezilla | Out-Null
+write-host "END Install FileZilla!"
+
 # write-host "Install Web Api CMD . . . "
 # choco install webpicommandline| Out-Null
 # write-host "END Install Install Web Api CMD!"
@@ -115,5 +119,8 @@ write-host "Install DefinitelyTyped . . ."
 npm install tsd -g
 write-host "END Install DefinitelyTyped!"
 
+write-host "Install FileZilla . . ."
+cinst -y filezilla | Out-Null
+write-host "END Install FileZilla!"
 
 Write-host "Program Installed Ended At: $((Get-Date).ToString())"
