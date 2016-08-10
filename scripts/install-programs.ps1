@@ -91,18 +91,18 @@ write-host "Install FileZilla . . ."
 cinst -y filezilla | Out-Null
 write-host "END Install FileZilla!"
 
-# write-host "Install Web Api CMD . . . "
-# choco install webpicommandline| Out-Null
-# write-host "END Install Install Web Api CMD!"
+write-host "Install Web Api CMD . . . "
+cinst -y webpicommandline | Out-Null
+write-host "END Install Install Web Api CMD!"
 
-# write-host "Install Url Rewrite and ARR . . ."
-# $iis = Get-Service W3SVC
-# if ($iis) 
-# {
-#     $webPiProducts = @('UrlRewrite2', 'ARRv3_0') 
-#     WebPICMD /Install /Products:"$($webPiProducts -join ',')" /AcceptEULA | out-null
-# }
-# write-host "END Install Url Rewrite and ARR . . ."
+write-host "Install Url Rewrite and ARR . . ."
+$iis = Get-Service W3SVC
+if ($iis) 
+{
+    $webPiProducts = @('UrlRewrite2', 'ARRv3_0') 
+    WebPICMD /Install /Products:"$($webPiProducts -join ',')" /AcceptEULA | out-null
+}
+write-host "END Install Url Rewrite and ARR . . ."
 
 chocolatey feature disable -n=allowGlobalConfirmation
 
