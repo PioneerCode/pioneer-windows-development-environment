@@ -61,7 +61,6 @@ git clone https://github.com/PioneerCode/pioneer-windows-development-environment
   * [Packer](https://www.packer.io/intro/getting-started/vagrant.html) is widely used and made by the same people who make Vagrant.
   * Joe Fitzgerald's [repo](https://github.com/joefitzgerald/packer-windows) is highly recommended and takes a lot of guess-work out of the process.
 * Use one that is available from the [community](https://atlas.hashicorp.com/boxes/search).
-* Ask another member of your team for one. 
 
 Once you have secured your box, navigate to it.
 ```bash
