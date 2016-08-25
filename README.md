@@ -38,7 +38,7 @@ cinst git.install -y
 cinst virtualbox -y
 ```
 
-#### VirtualBox
+#### VMWare
 **Not Free** - VirtualBox works great.  If you prefer [VMware Workstation](https://www.vmware.com/products/workstation), you also need to secure the [Vagrant + VMware](https://www.vagrantup.com/vmware/) plugin.
 
 ```bash 
