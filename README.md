@@ -84,7 +84,7 @@ In the pioneer-windows-development-environment repo, there is a file called [Vag
 config.vm.box = {name-of-box}
 ```
 ## Provision
-Depending on what you want to installed coming out of the gates, you might want to take a quick look at the following provision scripts.
+Depending on what you want installed coming out of the gates, you might want to take a quick look at the following provision scripts.
 * install-iis.ps1
 * install-programs.ps1
 
