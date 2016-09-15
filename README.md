@@ -110,10 +110,7 @@ This will configure and create, if not already done, a guest machine for you.  D
 * Parametrize ```config.vm.box```
 * Include automated update script in "setup"
 * Add SQL Server 2016 once it passes moderation by Chocolatey mods.
-* Add provisions post **install-programs.ps1**
-  * Blocked - [https://github.com/mitchellh/vagrant/issues/7526](https://github.com/mitchellh/vagrant/issues/7526)
 
 ## Know Issues
-* Chocolatey and WinRM Bug not allowing provisions after the script that installs Chocolatey.
 * SQL Server Management Studio might not install.
   * Sometimes need to re-run ```cinst -y  sql-server-management-studio``` after the initial provision.
