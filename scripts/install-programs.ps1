@@ -79,6 +79,7 @@ write-host "Install ReSharper . . . "
 cinst -y  resharper | Out-Null
 write-host "END Install ReSharper!"
 
+# Remove when SQL Express 2016 pass choo moderation
 write-host "Install SQL Server Management Studio . . . "
 cinst -y  sql-server-management-studio  | Out-Null
 write-host "END Install SQL Server Management Studio!"
@@ -90,6 +91,14 @@ write-host "END Install Stackify Prefix!"
 write-host "Install FileZilla . . ."
 cinst -y filezilla | Out-Null
 write-host "END Install FileZilla!"
+
+write-host "Install CCleaaner . . . "
+cinst -y  ccleaner | Out-Null
+write-host "END Install CCleaner!"
+
+write-host "Install Dropbox . . . "
+cinst -y  dropbox | Out-Null
+write-host "END Install Dropbox!"
 
 write-host "Install Web Api CMD . . . "
 cinst -y webpicommandline | Out-Null
@@ -118,9 +127,5 @@ write-host "END Install Bower!"
 write-host "Install DefinitelyTyped . . ."
 npm install tsd -g
 write-host "END Install DefinitelyTyped!"
-
-write-host "Install FileZilla . . ."
-cinst -y filezilla | Out-Null
-write-host "END Install FileZilla!"
 
 Write-host "Program Installed Ended At: $((Get-Date).ToString())"
