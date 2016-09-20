@@ -112,5 +112,6 @@ This will configure and create, if not already done, a guest machine for you.  D
 * Add SQL Server 2016 once it passes moderation by Chocolatey mods.
 
 ## Know Issues
-* SQL Server Management Studio might not install.
+* VMWare Workstation 12.5 looses connectivety on opening provisions.  
+* SQL Server Managemnt Studio might not install.
   * Sometimes need to re-run ```cinst -y  sql-server-management-studio``` after the initial provision.

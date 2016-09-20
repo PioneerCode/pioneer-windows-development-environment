@@ -3,8 +3,7 @@
 #   Additonal packages can be found at https://chocolatey.org/packages
 #   1) Remove/Add packages
 #################################################################################################
-Write-host "Program Installed Started At: $((Get-Date).ToString())"
-write-host "Installing Programs"
+Write-host "Choco Started At: $((Get-Date).ToString())"
 
 $ChocoInstallPath = "$($env:SystemDrive)\ProgramData\Chocolatey\bin"
 if (!(Test-Path $ChocoInstallPath)) {
@@ -115,17 +114,4 @@ write-host "END Install Url Rewrite and ARR . . ."
 
 chocolatey feature disable -n=allowGlobalConfirmation
 
-write-host "Install Gulp . . ."
-npm rm --global gulp
-npm install --global gulp-cli
-write-host "END Install Gulp!"
-
-write-host "Install Bower . . ."
-npm install --global bower
-write-host "END Install Bower!"
-
-write-host "Install DefinitelyTyped . . ."
-npm install tsd -g
-write-host "END Install DefinitelyTyped!"
-
-Write-host "Program Installed Ended At: $((Get-Date).ToString())"
+Write-host "Choco Ended At: $((Get-Date).ToString())"

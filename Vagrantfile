@@ -7,8 +7,8 @@ Vagrant.configure("2") do |config|
   config.vm.define "Pioneer Dev"
 
   # Name of box to install with
-  # config.vm.box = "windows_10_virtualbox"
-  config.vm.box = "windows_10_vmware"
+  config.vm.box = "windows_10_virtualbox"
+  # config.vm.box = "windows_10_vmware"
   
   # Communicator type
   config.vm.communicator = "winrm"  
@@ -30,6 +30,7 @@ Vagrant.configure("2") do |config|
     vb.gui = true
     vb.cpus = 2
     vb.memory = 8192
+    vb.customize ["modifyvm", :id, "--vram", "128"]
     vb.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]
     vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
     vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
@@ -63,6 +64,9 @@ Vagrant.configure("2") do |config|
     s.path = "scripts/install-iis.ps1"
   end
   config.vm.provision "shell" do |s|
-    s.path = "scripts/install-programs.ps1"
+    s.path = "scripts/install-choco.ps1"
+  end
+  config.vm.provision "shell" do |s|
+    s.path = "scripts/install-npm.ps1"
   end
 end 
