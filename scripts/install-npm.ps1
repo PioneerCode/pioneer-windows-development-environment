@@ -15,7 +15,7 @@ npm install --global bower
 write-host "END Install Bower!"
 
 write-host "Install DefinitelyTyped . . ."
-npm install tsd -g
+npm install typings -g
 write-host "END Install DefinitelyTyped!"
 
 Write-host "npm Ended At: $((Get-Date).ToString())"
