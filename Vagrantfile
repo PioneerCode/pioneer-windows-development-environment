@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider :virtualbox do |vb, override|
     vb.gui = true
     vb.cpus = 2
-    vb.memory = 8192
+    vb.memory = 12288
     vb.customize ["modifyvm", :id, "--vram", "128"]
     vb.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]
     vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
   # VMWare Workstation configuration
   config.vm.provider :vmware_workstation do |v, override|
     v.gui = true
-    v.vmx["memsize"] = 8192
+    v.vmx["memsize"] = 12288
     v.vmx["numvcpus"] = 2
     v.vmx['displayname'] = "Pioneer Dev"
     v.vmx["ethernet0.virtualDev"] = "vmxnet3"
@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
   # VMWare Fusion configuration
   config.vm.provider :vmware_fusion do |v, override|
     #v.gui = true
-    v.vmx["memsize"] = "8192"
+    v.vmx["memsize"] = "12288"
     v.vmx["numvcpus"] = "2"
     v.vmx["ethernet0.virtualDev"] = "vmxnet3"
     v.vmx["RemoteDisplay.vnc.enabled"] = "false"
@@ -60,13 +60,19 @@ Vagrant.configure("2") do |config|
   end
 
   # Execute Provision
-  config.vm.provision "shell" do |s|
-    s.path = "scripts/install-iis.ps1"
-  end
-  config.vm.provision "shell" do |s|
-    s.path = "scripts/install-choco.ps1"
-  end
-  config.vm.provision "shell" do |s|
-    s.path = "scripts/install-npm.ps1"
-  end
+  
+  # Move scripts and install when ready
+  config.vm.provision "file", source: "scripts", destination: "desktop"
+  
+  # Install on Up
+  # config.vm.provision "shell" do |s|
+  #   s.path = "scripts/install-iis.ps1"
+  # end
+  # config.vm.provision "shell" do |s|
+  #   s.path = "scripts/install-choco.ps1"
+  # end
+  # config.vm.provision "shell" do |s|
+  #   s.path = "scripts/install-npm.ps1"
+  # end
+  
 end 
