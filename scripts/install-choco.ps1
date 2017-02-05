@@ -50,6 +50,10 @@ write-host "Install NodeJs . . . "
 cinst -y nodejs.install | Out-Null
 write-host "END Install NodeJs!"
 
+write-host "Install Yarn . . . "
+cinst -y yarn | Out-Null
+write-host "END Install Yarn!"
+
 write-host "Install Redis . . . "
 cinst -y  redis | Out-Null
 write-host "END Install Redis!"
