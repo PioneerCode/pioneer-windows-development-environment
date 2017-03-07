@@ -7,11 +7,11 @@ Write-host "npm Started At: $((Get-Date).ToString())"
 
 write-host "Install Gulp . . ."
 npm rm --global gulp
-npm install --global gulp-cli
+npm install gulp-cli -g
 write-host "END Install Gulp!"
 
 write-host "Install Bower . . ."
-npm install --global bower
+npm install bower -g
 write-host "END Install Bower!"
 
 write-host "Install DefinitelyTyped . . ."
