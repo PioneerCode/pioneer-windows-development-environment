@@ -107,9 +107,7 @@ vagrant up --provider vmware_fusion
 
 This will configure and create, if not already done, a guest machine for you.  Depending on what you are installing, this will take anywhere from a minute (empty guest) to about 30 mins (default provisions) to complete.
 ## TODO
-* Parametrize ```config.vm.box```
 * Include automated update script in "setup"
-* Add SQL Server 2016 once it passes moderation by Chocolatey mods.
 
 ## Know Issues
 * VMWare Workstation 12.5 looses connectivety on opening provisions.  
