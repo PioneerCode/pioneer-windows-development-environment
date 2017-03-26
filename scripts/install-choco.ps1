@@ -66,7 +66,34 @@ write-host "Install Visual Studio Code . . . "
 cinst -y  visualstudiocode | Out-Null
 write-host "END Install Visual Studio Code!"
 
-# Can't wait for VS 2017 Choco package to show up !!
+write-host "Install Stackify Prefix . . ."
+cinst -y prefix | Out-Null
+write-host "END Install Stackify Prefix!"
+
+write-host "Install FileZilla . . ."
+cinst -y filezilla | Out-Null
+write-host "END Install FileZilla!"
+
+write-host "Install CCleaaner . . . "
+cinst -y  ccleaner | Out-Null
+write-host "END Install CCleaner!"
+
+write-host "Install Dropbox . . . "
+cinst -y  dropbox | Out-Null
+write-host "END Install Dropbox!"
+
+write-host "Install Web Api CMD . . . "
+cinst -y webpicommandline | Out-Null
+write-host "END Install Install Web Api CMD!"
+
+write-host "Install Url Rewrite and ARR . . ."
+$iis = Get-Service W3SVC
+if ($iis) 
+{
+    $webPiProducts = @('UrlRewrite2', 'ARRv3_0') 
+    WebPICMD /Install /Products:"$($webPiProducts -join ',')" /AcceptEULA | out-null
+}
+write-host "END Install Url Rewrite and ARR . . ."
 
 # write-host "Install Visual Studio 2015 Enterprise . . ."
 # cinst -y  visualstudio2015enterprise | Out-Null
@@ -103,35 +130,6 @@ write-host "END Install ReSharper!"
 # write-host "Install SQL Server Management Studio . . . "
 # cinst -y  sql-server-management-studio  | Out-Null
 # write-host "END Install SQL Server Management Studio!"
-
-write-host "Install Stackify Prefix . . ."
-cinst -y prefix | Out-Null
-write-host "END Install Stackify Prefix!"
-
-write-host "Install FileZilla . . ."
-cinst -y filezilla | Out-Null
-write-host "END Install FileZilla!"
-
-write-host "Install CCleaaner . . . "
-cinst -y  ccleaner | Out-Null
-write-host "END Install CCleaner!"
-
-write-host "Install Dropbox . . . "
-cinst -y  dropbox | Out-Null
-write-host "END Install Dropbox!"
-
-write-host "Install Web Api CMD . . . "
-cinst -y webpicommandline | Out-Null
-write-host "END Install Install Web Api CMD!"
-
-write-host "Install Url Rewrite and ARR . . ."
-$iis = Get-Service W3SVC
-if ($iis) 
-{
-    $webPiProducts = @('UrlRewrite2', 'ARRv3_0') 
-    WebPICMD /Install /Products:"$($webPiProducts -join ',')" /AcceptEULA | out-null
-}
-write-host "END Install Url Rewrite and ARR . . ."
 
 chocolatey feature disable -n=allowGlobalConfirmation
 
