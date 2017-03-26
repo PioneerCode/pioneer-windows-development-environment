@@ -80,6 +80,18 @@ write-host "END Install Visual Studio Code!"
 # cinst -y  visualstudio2015community | Out-Null
 # write-host "END Install Visual Studio 2015 Community"
 
+write-host "Install Visual Studio 2017 Enterprise . . ."
+cinst -y  visualstudio2017enterprise | Out-Null
+write-host "END Install Visual Studio 2017"
+
+# write-host "Install Visual Studio 2017 Professional  . . ."
+# cinst -y  visualstudio2015professional | Out-Null
+# write-host "END Install Visual Studio 2017 Professional"
+
+# write-host "Install Visual Studio 2017 Community  . . ."
+# cinst -y  visualstudio2015community | Out-Null
+# write-host "END Install Visual Studio 2017 Community"
+
 write-host "Install ReSharper . . . "
 cinst -y  resharper | Out-Null
 write-host "END Install ReSharper!"
