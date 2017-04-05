@@ -66,32 +66,6 @@ write-host "Install Visual Studio Code . . . "
 cinst -y  visualstudiocode | Out-Null
 write-host "END Install Visual Studio Code!"
 
-# Can't wait for VS 2017 Choco package to show up !!
-
-# write-host "Install Visual Studio 2015 Enterprise . . ."
-# cinst -y  visualstudio2015enterprise | Out-Null
-# write-host "END Install Visual Studio 2015"
-
-# write-host "Install Visual Studio 2015 Professional  . . ."
-# cinst -y  visualstudio2015professional | Out-Null
-# write-host "END Install Visual Studio 2015 Professional"
-
-# write-host "Install Visual Studio 2015 Community  . . ."
-# cinst -y  visualstudio2015community | Out-Null
-# write-host "END Install Visual Studio 2015 Community"
-
-write-host "Install ReSharper . . . "
-cinst -y  resharper | Out-Null
-write-host "END Install ReSharper!"
-
-# write-host "Install SQL Express 2016 . . . "
-# cinst -y  sql-server-express | Out-Null
-# write-host "END Install SQL Express 2016!"
-
-# write-host "Install SQL Server Management Studio . . . "
-# cinst -y  sql-server-management-studio  | Out-Null
-# write-host "END Install SQL Server Management Studio!"
-
 write-host "Install Stackify Prefix . . ."
 cinst -y prefix | Out-Null
 write-host "END Install Stackify Prefix!"
@@ -120,6 +94,42 @@ if ($iis)
     WebPICMD /Install /Products:"$($webPiProducts -join ',')" /AcceptEULA | out-null
 }
 write-host "END Install Url Rewrite and ARR . . ."
+
+# write-host "Install Visual Studio 2015 Enterprise . . ."
+# cinst -y  visualstudio2015enterprise | Out-Null
+# write-host "END Install Visual Studio 2015"
+
+# write-host "Install Visual Studio 2015 Professional  . . ."
+# cinst -y  visualstudio2015professional | Out-Null
+# write-host "END Install Visual Studio 2015 Professional"
+
+# write-host "Install Visual Studio 2015 Community  . . ."
+# cinst -y  visualstudio2015community | Out-Null
+# write-host "END Install Visual Studio 2015 Community"
+
+write-host "Install Visual Studio 2017 Enterprise . . ."
+cinst -y  visualstudio2017enterprise | Out-Null
+write-host "END Install Visual Studio 2017"
+
+# write-host "Install Visual Studio 2017 Professional  . . ."
+# cinst -y  visualstudio2015professional | Out-Null
+# write-host "END Install Visual Studio 2017 Professional"
+
+# write-host "Install Visual Studio 2017 Community  . . ."
+# cinst -y  visualstudio2015community | Out-Null
+# write-host "END Install Visual Studio 2017 Community"
+
+write-host "Install ReSharper . . . "
+cinst -y  resharper | Out-Null
+write-host "END Install ReSharper!"
+
+# write-host "Install SQL Express 2016 . . . "
+# cinst -y  sql-server-express | Out-Null
+# write-host "END Install SQL Express 2016!"
+
+# write-host "Install SQL Server Management Studio . . . "
+# cinst -y  sql-server-management-studio  | Out-Null
+# write-host "END Install SQL Server Management Studio!"
 
 chocolatey feature disable -n=allowGlobalConfirmation
 
