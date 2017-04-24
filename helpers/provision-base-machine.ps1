@@ -63,8 +63,9 @@ write-host "Install Visual Studio Code . . . "
 cinst -y  visualstudiocode | Out-Null
 write-host "END Install Visual Studio Code!"
 
+## Currently there is a bug prohibiting provision after this version
 write-host "Install VirtualBox . . . "
-cinst -y  virtualbox | Out-Null
+cinst -y vagrant -version 1.9.2 | Out-Null
 write-host "END Install VirtualBox!"
 
 write-host "Install Vagrant . . . "
@@ -78,7 +79,11 @@ Write-host "Choco Ended At: $((Get-Date).ToString())"
 # Repo install
 Write-host "Repo Started At: $((Get-Date).ToString())"
 
-Set-Location $projectDir + "\pioneer"
+$projectDir = "$($projectDir)\pioneer"
+If (!(Test-Path $projectDir)) {
+	New-Item -Path $projectDir -ItemType Directory
+}
+Set-Location $projectDir
 git clone "https://github.com/PioneerCode/pioneer-windows-development-environment.git"
 
 Write-host "Repo Ended At: $((Get-Date).ToString())"
