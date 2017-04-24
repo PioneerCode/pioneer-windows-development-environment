@@ -43,9 +43,23 @@ write-host "Install TeamCity . . . "
 cinst -y  teamcity | Out-Null
 write-host "END Install TeamCity!"
 
+# Front-end CI
+write-host "Install GIT . . . "
+cinst -y  git.install | Out-Null
+write-host "END Install GIT!"
+
 write-host "Install NodeJs . . . "
 cinst -y nodejs.install | Out-Null
 write-host "END Install NodeJs!"
+
+write-host "Install Bower . . . "
+npm install -g bower
+write-host "END Install Bower!"
+
+write-host "Install Gulp . . . "
+npm install gulp-cli -g
+npm install gulp -g
+write-host "END Install Gulp!"
 
 # Fun
 write-host "Install Plex Media Server . . . "
