@@ -90,7 +90,7 @@ Depending on what you want installed coming out of the gates, you might want to 
 
 Most of what is needed for our entire stack is already configured inside these files.  That being said, you might have some personal preferences.  Open each up to take a quick look and make any adjustments you see fit.
 
-Typically, you would want to at least open up **install-programs.ps1** and select the appropriate version of Visual Studio to be installed.  As a default, Visual Studio 2015 Enterprise edition is provisioned. 
+Typically, you would want to at least open up **install-programs.ps1** and select the appropriate version of Visual Studio to be installed.  As a default, Visual Studio 2017 Enterprise edition is provisioned. 
 
 ## Run
 Depending on your environment, run one of the following.  Default == VirtualBox. 
