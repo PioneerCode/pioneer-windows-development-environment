@@ -8,7 +8,7 @@ Write-host "Choco Started At: $((Get-Date).ToString())"
 $ChocoInstallPath = "$($env:SystemDrive)\ProgramData\Chocolatey\bin"
 if (!(Test-Path $ChocoInstallPath)) {
     write-host "Install Chocolatey . . . "
-    iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')) | out-null
+    Invoke-Expression ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')) | out-null
     write-host "END Installing Chocolatey!" 
 } else {
     write-host "Upgrade Chocolatey . . . "
