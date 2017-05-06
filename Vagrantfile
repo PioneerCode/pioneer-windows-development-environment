@@ -61,8 +61,8 @@ Vagrant.configure("2") do |config|
 
   # Execute Provision
   
-  # Move scripts and install when ready
-  config.vm.provision "file", source: "scripts", destination: "desktop"
+  # Move scripts to documents folder and install when ready
+  config.vm.provision "file", source: "scripts", destination: "scripts"
   
   # Install on Up
   # config.vm.provision "shell" do |s|
