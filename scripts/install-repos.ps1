@@ -22,7 +22,7 @@ git clone "https://github.com/PioneerCode/pioneer-blog.git"
 git clone "https://github.com/PioneerCode/pioneer-warmer.git"
 git clone "https://github.com/PioneerCode/pioneer-console-boilerplate.git"
 git clone "https://github.com/PioneerCode/pioneer-pagination.git"
-git clone "https://github.com/pioneer-windows-development-environment.git"
+git clone "https://github.com/PioneerCode/pioneer-windows-development-environment.git"
 
 write-host "END Pulling Pioneer Code"
 
