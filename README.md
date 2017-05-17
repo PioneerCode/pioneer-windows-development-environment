@@ -1,4 +1,4 @@
-# Pioneer Code Windows Development Environment With [Packer](https://www.packer.io), [Vagrant](https://www.vagrantup.com/) and [Chocolatey](https://chocolatey.org/)
+# Pioneer Code Windows Development Environment With [Packer](https://www.packer.io), [Vagrant](https://www.vagrantup.com/), and [Chocolatey](https://chocolatey.org/)
 
 ## Overview
 
@@ -84,13 +84,12 @@ In the pioneer-windows-development-environment repo, there is a file called [Vag
 config.vm.box = {name-of-box}
 ```
 ## Provision
-Depending on what you want installed coming out of the gates, you might want to take a quick look at the following provision scripts.
-* install-iis.ps1
-* install-programs.ps1
-
-Most of what is needed for our entire stack is already configured inside these files.  That being said, you might have some personal preferences.  Open each up to take a quick look and make any adjustments you see fit.
+Depending on what you want to be installed coming out of the gates, you might want to take a quick look at the provision scripts located in the [scripts folder](https://github.com/PioneerCode/pioneer-windows-development-environment/tree/master/scripts). Most of what is needed for our entire stack is already configured inside these files.  That being said, you might have some personal preferences.  Open each up to take a quick look and make any adjustments you see fit.
 
 Typically, you would want to at least open up **install-programs.ps1** and select the appropriate version of Visual Studio to be installed.  As a default, Visual Studio 2017 Enterprise edition is provisioned. 
+
+### When to run scripts
+Some people will want to run scripts as provisions of ```vagrant up```, others might want to move the script files to their new VM and run them at will.  By default, the [Vagrantfile](https://www.vagrantup.com/docs/vagrantfile/) is set to run a few scripts that I know I will always need to be run.  If you prefer, you can comment those provision out and uncomment the "file" provision.  The "file" provision will instead move the scripts to the ```c:\users\vagrant\documents\script```.  This will allow you to run them whenever you see fit.
 
 ## Run
 Depending on your environment, run one of the following.  Default == VirtualBox. 
@@ -106,10 +105,7 @@ vagrant up --provider vmware_fusion
 ```
 
 This will configure and create, if not already done, a guest machine for you.  Depending on what you are installing, this will take anywhere from a minute (empty guest) to about 30 mins (default provisions) to complete.
-## TODO
-* Include automated update script in "setup"
 
 ## Know Issues
-* VMWare Workstation 12.5 looses connectivety on opening provisions.  
 * SQL Server Managemnt Studio might not install.
   * Sometimes need to re-run ```cinst -y  sql-server-management-studio``` after the initial provision.
