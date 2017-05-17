@@ -59,7 +59,10 @@ git clone https://github.com/PioneerCode/pioneer-windows-development-environment
   * There are plenty of tutorials available [online](http://lmgtfy.com/?q=vagrant%2C+create+a+windows+box).
 * Make your own using [Packer](https://www.packer.io/intro/getting-started/vagrant.html).
   * [Packer](https://www.packer.io/intro/getting-started/vagrant.html) is widely used and made by the same people who make Vagrant.
-  * Joe Fitzgerald's [repo](https://github.com/joefitzgerald/packer-windows) is highly recommended and takes a lot of guess-work out of the process.
+  * [Joe Fitzgerald's](https://twitter.com/joefitzgerald?lang=en) [repo](https://github.com/joefitzgerald/packer-windows) is highly recommended and takes a lot of guess-work out of the process.
+    * It is highly recommended that you build your Windows boxes with **winrm** instead of **ssh**.  Long story short, this solves a lot of know issues with Vagrant and Windows communicating with each other.
+    * That being said, if you are using packer to build your box and more specifically [Joe Fitzgerald's](https://twitter.com/joefitzgerald?lang=en) [repo](https://github.com/joefitzgerald/packer-windows), I recommend you use the branch that has the necessary adjustments to implement winrm.  
+      * [jg/switch-to-winrm](https://github.com/joefitzgerald/packer-windows/tree/jf/switch-to-winrm) 
 * Use one that is available from the [community](https://atlas.hashicorp.com/boxes/search).
 
 Once you have secured your box, navigate to it.
