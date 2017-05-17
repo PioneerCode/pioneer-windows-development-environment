@@ -62,17 +62,17 @@ Vagrant.configure("2") do |config|
   # Execute Provision
   
   # Move scripts to documents folder and install when ready
-  config.vm.provision "file", source: "scripts", destination: "scripts"
+  # config.vm.provision "file", source: "scripts", destination: "scripts"
   
   # Install on Up
-  # config.vm.provision "shell" do |s|
-  #   s.path = "scripts/install-iis.ps1"
-  # end
-  # config.vm.provision "shell" do |s|
-  #   s.path = "scripts/install-choco.ps1"
-  # end
-  # config.vm.provision "shell" do |s|
-  #   s.path = "scripts/install-npm.ps1"
-  # end
+  config.vm.provision "shell" do |s|
+    s.path = "scripts/install-iis.ps1"
+  end
+  config.vm.provision "shell" do |s|
+    s.path = "scripts/install-choco.ps1"
+  end
+  config.vm.provision "shell" do |s|
+    s.path = "scripts/install-npm.ps1"
+  end
   
 end 
