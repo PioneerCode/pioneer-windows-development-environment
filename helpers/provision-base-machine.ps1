@@ -63,9 +63,8 @@ write-host "Install Visual Studio Code . . . "
 cinst -y  visualstudiocode | Out-Null
 write-host "END Install Visual Studio Code!"
 
-## Currently there is a bug prohibiting provision after this version
 write-host "Install VirtualBox . . . "
-cinst -y vagrant -version 1.9.2 | Out-Null
+cinst -y vagrant Out-Null
 write-host "END Install VirtualBox!"
 
 write-host "Install Vagrant . . . "
