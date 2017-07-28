@@ -7,7 +7,8 @@ Vagrant.configure("2") do |config|
   config.vm.define "Pioneer Dev"
 
   # Name of box to install with
-  config.vm.box = "windows_10_virtualbox"
+  config.vm.box = "windows_10_hyperv"
+  # config.vm.box = "windows_10_virtualbox"
   # config.vm.box = "windows_10_vmware"
   
   # Communicator type
@@ -24,6 +25,13 @@ Vagrant.configure("2") do |config|
   # Admin user name and password
   config.winrm.username = "vagrant"
   config.winrm.password = "vagrant"
+
+  # Hyperv configuration
+  config.vm.provider :hyperv do |h|
+    h.vmname = "pioneer-dev"
+    h.cpus = 2
+    h.memory = 12288
+  end
 
   # VirutalBox configuration
   config.vm.provider :virtualbox do |vb, override|
@@ -56,13 +64,13 @@ Vagrant.configure("2") do |config|
     v.vmx["ethernet0.virtualDev"] = "vmxnet3"
     v.vmx["RemoteDisplay.vnc.enabled"] = "false"
     v.vmx["RemoteDisplay.vnc.port"] = "5900"
-    v.vmx["scsi0.virtualDev"] = "lsisas1068"
+    v.vmx["scsi0.virtualDev"] = "lsisas1068"s
   end
 
   # Execute Provision
   
   # Move scripts to documents folder and install when ready
-  # config.vm.provision "file", source: "scripts", destination: "scripts"
+  config.vm.provision "file", source: "scripts", destination: "scripts"
   
   # Install on Up
   config.vm.provision "shell" do |s|
