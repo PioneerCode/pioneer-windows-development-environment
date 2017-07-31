@@ -82,5 +82,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" do |s|
     s.path = "scripts/install-npm.ps1"
   end
-  
+  config.vm.provision "shell" do |s|
+    s.path = "scripts/install-vscode-extensions.ps1"
+  end
 end 
