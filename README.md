@@ -106,6 +106,9 @@ vagrant up --provider vmware_workstation
 ```bash
 vagrant up --provider vmware_fusion
 ```
+```bash
+vagrant up --provider hyperv
+```
 
 This will configure and create, if not already done, a guest machine for you.  Depending on what you are installing, this will take anywhere from a minute (empty guest) to about 30 mins (default provisions) to complete.
 
