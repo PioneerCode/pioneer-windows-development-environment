@@ -30,6 +30,8 @@ cinst -y vscode-editorconfig
 cinst -y vscode-gitignore
 cinst -y vscode-editorconfig
 
+cinst -y dotnetcore-sdk
+
 #----------------
 # VSCode ext
 #----------------
